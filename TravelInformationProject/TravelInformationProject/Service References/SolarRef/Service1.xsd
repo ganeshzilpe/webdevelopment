@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SolarEnergyEstimation" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SolarEnergyEstimation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.1.12.43:8001/solarservice/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="inputData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="capacity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="losses" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="inputData" nillable="true" type="tns:inputData" />
+  <xs:complexType name="SolarEnergyInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="annualACOutput" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="annualDCOutput" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="annualSolarRadOutput" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="monthlyACOutput" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="monthlyDCOutput" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="monthlySolarRadOutput" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="testStr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SolarEnergyInformation" nillable="true" type="tns:SolarEnergyInformation" />
+</xs:schema>
